@@ -30,11 +30,15 @@ UsuariosDAO.prototype.autenticar = function(usuario, req, res){
 
             req.session.usuario = docs[0].usuario;
             req.session.casa = docs[0].casa;
-        }
+        }else{
+            res.render('index', {validacao : {}, usuario: usuario});
+            console.log(usuario);
+            return;
+        };
         if(req.session.autorizado){
             res.redirect('jogo');
         }else{
-            res.render('index', {validacao : {}});
+            res.render('index', {validacao : {}, usuario: {}});
         };
     });
 };

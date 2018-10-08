@@ -32,12 +32,19 @@
 			            </ul>
 			        </div>
 			    <% } %>
+			    <% if(!usuario.usuario  == ''){ %>
+			        <div class="alert alert-danger">
+			            <strong>Usuário, e ou senha inválidos</strong>
+			        </div>
+			        <%= usuario.usuario %>
+			    <% } %>
+
 				<form class="form-inline form-entrar" action="/autenticar" method="post">
 					<div class="form-group">
-						<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" />
+						<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" value="<%=usuario.usuario%>" />
 						<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" />
 						<button type="submit" class="btn btn-success">Entrar</button>
-						<button type="button" class="btn btn-info">Cadastro</button>
+						<button type="button" class="btn btn-info" id="btnCadastro">Cadastro</button>
 					</div>
 				</form>
 			</div>
@@ -53,9 +60,18 @@
 				</div>
 
 	    		<div class="col-md-2"></div>
-		    	</div>
-	    	</div>
-	    </div>
+		    </div>
+	   </div>
+	   <script>
+           $(document).ready(function(){
+
+                $('#btnCadastro').click(function(){
+                    window.location.href = '/cadastro';
+                });
+
+            });
+    </script>
 
 	</body>
+
 </html>

@@ -23,7 +23,7 @@
 			<div class="container">
 				<form class="form-inline form-entrar">
 					<div class="form-group">
-						<button type="button" class="btn btn-success">Voltar</button>
+						<button type="button" class="btn btn-success" id="btnVoltar">Voltar</button>
 					</div>
 				</form>
 			</div>
@@ -151,6 +151,14 @@
 			</form>
 
 	    </div>
+        <script>
+            $(document).ready(function(){
 
+                $('#btnVoltar').click(function(){
+                    window.location.href = '/';
+                });
+
+            });
+        </script>
 	</body>
 </html>

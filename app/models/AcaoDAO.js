@@ -5,9 +5,6 @@ function AcaoDAO(application){
 
 
 AcaoDAO.prototype.acao = function(acao){
-    console.log('dwwwe');
-    console.log(acao);
-
     var date = new Date();
 
     var tempo = null;
