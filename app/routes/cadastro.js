@@ -6,4 +6,8 @@ module.exports = function(application){
     application.post('/cadastrar', function(req, res){
 		application.app.controllers.cadastro.cadastrar(application, req, res);
 	});
+    application.get('/cadastro_efetuado', function(req, res){
+		application.app.controllers.cadastro.cadastro_efetuado(application, req, res);
+	});
 }
+

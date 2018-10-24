@@ -1,6 +1,9 @@
 module.exports.cadastro = function(application ,req, res){
     res.render('cadastro', {validacao : {}, dadosForm : {}});
 };
+module.exports.cadastro_efetuado = function(application ,req, res){
+    res.render('cadastro_efetuado');
+};
 
 module.exports.cadastrar = function(application ,req, res){
     var dadosForm = req.body;
@@ -23,5 +26,5 @@ module.exports.cadastrar = function(application ,req, res){
     var jogoDAO = new application.app.models.JogoDAO(application);
     jogoDAO.gerarParametros(dadosForm.usuario);
 
-    res.send("Tudo certo");
+    res.render('cadastro_efetuado', {usuario: dadosForm});
 };
